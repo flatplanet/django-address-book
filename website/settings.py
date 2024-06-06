@@ -15,7 +15,7 @@ SECRET_KEY = 'django-insecure-l0k!_bta$9wawk8e(r6jk77g917+84kk0_ue7q+p_z8o0)vxq)
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['django-address-book-production.up.railway.app']
+ALLOWED_HOSTS = ['django-address-book-production.up.railway.app', 'localhost']
 CSRF_TRUSTED_ORIGINS = ['https://django-address-book-production.up.railway.app']
 
 
