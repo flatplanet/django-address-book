@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<br/>
+{% if user.is_authenticated %}
+<table class="table table-striped table-hover table-bordered">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Address1</th>
+      <th scope="col">Address2</th>
+      <th scope="col">City</th>
+      <th scope="col">State</th>
+      <th scope="col">Zip Code</th>
+      <th scope="col">Country</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+{% for contact in contacts %}
+    <tr>
+      <td><a href="{% url 'contact' contact.id %}">{{ contact.first_name }} {{ contact.last_name }}</a></td>
+      <td>{{ contact.email }}</td>
+      <td>{{ contact.phone }}</td>
+      <td>{{ contact.address1 }}</td>
+      <td>{{ contact.address2 }}</td>
+      <td>{{ contact.city }}</td>
+      <td>{{ contact.state }}</td>
+      <td>{{ contact.zipcode }}</td>
+      <td>{{ contact.country }}</td>
+      <td><a href="{% url 'delete' contact.id %}" class="btn btn-sm btn-outline-danger">Delete</a></td>
+    </tr>
+{% endfor %}    
+  
+  </tbody>
+</table>
+
+{% else %}
+<h1>Please Login <a href="{% url 'login' %}">Here</a>...</h1>
+
+{% endif %}
+
+
+
+{% endblock %}
