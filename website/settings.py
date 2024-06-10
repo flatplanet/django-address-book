@@ -1,6 +1,8 @@
 from pathlib import Path
 import os
 
+DB_PASSWORD_YO = os.environ["DB_PASSWORD_YO"]
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -72,7 +74,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'railway',
         'USER': 'postgres',
-        'PASSWORD': ${{DB_PASSWORD_YO}},
+        'PASSWORD': DB_PASSWORD_YO,
         #'PASSWORD': 'WhUtbkuczefPWspaOuWqKjzfnKxrmsvb',
         'HOST': 'viaduct.proxy.rlwy.net',
         'PORT': '27239',
